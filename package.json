@@ -1,9 +1,27 @@
 {
-  "name": "@local/deepseek-golden-partner",
-  "version": "0.2.0",
-  "private": true,
+  "name": "dsh-golden-partner",
+  "version": "0.1.0",
   "type": "module",
-  "description": "deepseek黄金搭档：把仓库上下文打成包交给外部方案模型，再把方案接回来落成计划文件；左侧栏提供交接待办面板。",
+  "description": "Hands a repo context pack to an external planning model, then brings the brief back as a plan file. Long text stays on disk; the conversation only carries paths and counts.",
+  "license": "MIT",
+  "author": "潇色君",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiaosejun/dsh-golden-partner.git"
+  },
+  "homepage": "https://github.com/xiaosejun/dsh-golden-partner#readme",
+  "bugs": {
+    "url": "https://github.com/xiaosejun/dsh-golden-partner/issues"
+  },
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "handoff",
+    "context-pack",
+    "planning"
+  ],
   "exports": {
     ".": "./index.js",
     "./client": "./client.js",
@@ -16,8 +34,10 @@
     "cordis.patch.yml",
     "locale/zh.json",
     "locale/en.json",
+    "docs",
     "icon.svg",
-    "README.md"
+    "README.md",
+    "LICENSE"
   ],
   "dsh": {
     "bundle": {
@@ -28,5 +48,8 @@
       "immediately": true,
       "inject": []
     }
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="300" viewBox="0 0 640 300" fill="none">
+  <!-- left card: the context pack -->
+  <rect x="48" y="62" width="216" height="176" rx="16" fill="#4D6BFE" fill-opacity="0.10" stroke="#4D6BFE" stroke-opacity="0.45" stroke-width="2"/>
+  <rect x="72" y="84" width="86" height="12" rx="6" fill="#4D6BFE" fill-opacity="0.85"/>
+  <rect x="72" y="112" width="150" height="8" rx="4" fill="#6B7688" fill-opacity="0.55"/>
+  <rect x="72" y="130" width="122" height="8" rx="4" fill="#6B7688" fill-opacity="0.55"/>
+  <rect x="72" y="148" width="160" height="8" rx="4" fill="#6B7688" fill-opacity="0.55"/>
+  <rect x="72" y="166" width="96" height="8" rx="4" fill="#6B7688" fill-opacity="0.55"/>
+  <rect x="72" y="184" width="140" height="8" rx="4" fill="#6B7688" fill-opacity="0.35"/>
+  <rect x="72" y="202" width="110" height="8" rx="4" fill="#6B7688" fill-opacity="0.35"/>
+
+  <!-- handoff arrow -->
+  <path d="M276 150H344" stroke="#4D6BFE" stroke-width="3" stroke-linecap="round"/>
+  <path d="M334 138L350 150L334 162" stroke="#4D6BFE" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- right card: the dated plan file -->
+  <rect x="364" y="62" width="228" height="176" rx="16" fill="#4D6BFE" fill-opacity="0.10" stroke="#4D6BFE" stroke-opacity="0.45" stroke-width="2"/>
+  <rect x="388" y="84" width="112" height="14" rx="7" fill="#4D6BFE" fill-opacity="0.85"/>
+  <rect x="388" y="116" width="8" height="8" rx="2" fill="#6B7688" fill-opacity="0.6"/>
+  <rect x="406" y="116" width="120" height="8" rx="4" fill="#6B7688" fill-opacity="0.5"/>
+  <rect x="388" y="140" width="8" height="8" rx="2" fill="#6B7688" fill-opacity="0.6"/>
+  <rect x="406" y="140" width="146" height="8" rx="4" fill="#6B7688" fill-opacity="0.5"/>
+  <rect x="388" y="164" width="8" height="8" rx="2" fill="#6B7688" fill-opacity="0.6"/>
+  <rect x="406" y="164" width="102" height="8" rx="4" fill="#6B7688" fill-opacity="0.5"/>
+  <rect x="388" y="188" width="8" height="8" rx="2" fill="#6B7688" fill-opacity="0.35"/>
+  <rect x="406" y="188" width="132" height="8" rx="4" fill="#6B7688" fill-opacity="0.35"/>
+</svg>
