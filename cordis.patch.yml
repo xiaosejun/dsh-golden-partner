@@ -1,0 +1,4 @@
+- insert:
+    - id: deepseek-golden-partner
+      name: '@local/deepseek-golden-partner'
+      config: {}

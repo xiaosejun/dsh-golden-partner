@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "deepseek golden partner",
+    "description": "Packs repository context into one file for an external planning model, then brings the plan back as a file under plans/.",
+    "detail": "Two tools: handoff_pack writes a context pack (tree, stack, conventions, key-file heads); plan_intake turns clipboard text into a dated plan file with a status header and reports its section headings. Both return only a path and counts, so long text never enters the conversation."
+  }
+}
