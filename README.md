@@ -6,15 +6,20 @@ A dsh bundle that hands a repo context pack to an external planning model and tu
 
 ## 安装
 
-```sh
-# npm 包
-dsh plugin --profile web add dsh-golden-partner
+桌面版：**设置 → 插件 → 添加插件**，粘贴仓库地址或下面的 tarball 地址；也可以用 CLI：
 
-# 或直接从仓库
-dsh plugin --profile web add https://github.com/xiaosejun/dsh-golden-partner
+```sh
+# 从仓库安装
+dsh plugin add https://github.com/xiaosejun/dsh-golden-partner
+
+# 或装预构建的 tarball（免构建）
+dsh plugin add https://github.com/xiaosejun/dsh-golden-partner/releases/download/v0.1.0/dsh-golden-partner-0.1.0.tgz
+
+# npm 包（尚未发布，发布后可用）
+dsh plugin add dsh-golden-partner
 ```
 
-桌面版在 **设置 → 插件** 里安装，重启应用后生效。左侧栏会出现 **deepseek黄金搭档** 入口，位置在「上下文洞察」与「更多」之间；点开后是整页面板。
+装完重启应用后生效。左侧栏会出现 **deepseek黄金搭档** 入口，位置在「上下文洞察」与「更多」之间；点开后是整页面板。
 
 ## 两个工具
 
