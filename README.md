@@ -13,7 +13,7 @@ A dsh bundle that hands a repo context pack to an external planning model and tu
 dsh plugin add https://github.com/xiaosejun/dsh-golden-partner
 
 # 或装预构建的 tarball（免构建）
-dsh plugin add https://github.com/xiaosejun/dsh-golden-partner/releases/download/v0.1.0/dsh-golden-partner-0.1.0.tgz
+dsh plugin add https://github.com/xiaosejun/dsh-golden-partner/releases/download/v0.1.1/dsh-golden-partner-0.1.1.tgz
 
 # npm 包（尚未发布，发布后可用）
 dsh plugin add dsh-golden-partner
@@ -29,6 +29,82 @@ dsh plugin add dsh-golden-partner
 | `plan_intake` | 读取剪贴板里的方案正文，存成 `plans/<时间>-<短名>.md`，加状态头（状态 / 来源 / 上下文占位），并回报识别出的小节标题。 | 路径、行数、字数、小节标题。 |
 
 典型流程：`handoff_pack` 出一份材料 → 整段贴给外部方案模型（例如网页版对话）讨论，让它按**目标 / 动哪里 / 约束 / 验收 / 不要做 / 怎么验证**六段输出 → 复制那份简报 → 说一句「用 `plan_intake` 接一下」→ 计划落地，agent 按小节读取后执行，收尾把偏差写回计划文件。
+
+## 完整示例：一次真实的交接
+
+场景：`my-app` 是个 Node 项目，你想给它加一个「导出 CSV」按钮，但**方案想在网页版里慢慢聊**，不想在本机对话里磨。
+
+### 第 1 步 · 让 agent 出上下文包
+
+在 dsh 对话里说：
+
+> 用 handoff_pack 打包一下导出功能要做的事，重点文件 `src/export.ts`、`src/components/Table.tsx`。
+
+对话里只会多出一行：
+
+```
+plans/_pack-20261124-1612.md · 3128 字 · 目标 / 目录结构 / 技术栈与脚本 / 既有约定 / 请你输出
+```
+
+磁盘上那份文件是这样的（节选）：
+
+```markdown
+# 上下文包 · 导出 CSV
+
+## 一、目标
+（待填：这次要解决什么）
+
+## 二、目录结构（浅层）
+src/
+  components/  (18 个文件)
+  ...
+## 三、技术栈与脚本
+- package.json: name=my-app, scripts: { dev, build, test }
+- 依赖: react@19.0.0, vite@6.0.3 ...
+
+## 四、既有约定
+- AGENTS.md：禁止 `as any`；提交前跑 `npm test`
+- README.md：Node ≥ 22
+
+## 五、请你输出
+按下面六段回答：目标 / 动哪里 / 约束 / 验收 / 不要做 / 怎么验证。
+```
+
+### 第 2 步 · 拿去网页版聊
+
+打开左侧栏 **deepseek黄金搭档**，点「复制：免费版开场白」，粘进网页版对话框，再把 `_pack-*.md` 全文贴上去。免费模型会按六段给出执行简报。
+
+这一步几千字的方案讨论**全在网页版里发生**，本机对话一个字都不占。
+
+### 第 3 步 · 把简报接回来
+
+复制网页版给的那份简报，粘进面板的文本框，点「复制：这份简报的待执行指令」，得到一段带约束复述要求的指令，粘进 dsh 对话即可。
+
+或者跳过面板，直接把简报复制到剪贴板，在对话里说：
+
+> 用 plan_intake 接一下剪贴板，短名 export-csv。
+
+落盘 `plans/20261124-1618-export-csv.md`，对话里只回报：
+
+```
+plans/20261124-1618-export-csv.md · 42 行 · 1860 字
+识别到：目标 / 动哪里 / 约束 / 验收 / 不要做 / 怎么验证
+```
+
+### 第 4 步 · 执行
+
+agent 按小节读这份计划、动手改代码、跑验证，收尾把偏差写回计划文件末尾的「执行记录」。
+
+### 省下来的到底是什么
+
+| 阶段 | 在哪里发生 | 占本机 token |
+| --- | --- | --- |
+| 方案讨论、试错、推翻重来 | 网页版（免费） | 0 |
+| 上下文包生成 | 本机（一次工具调用） | 一行路径 + 字数 |
+| 计划落盘 | 本机（一次工具调用） | 一行路径 + 字数 |
+| 执行、验证 | 本机（必须） | 正常消耗 |
+
+省的是**讨论环节**的 token，不是执行环节的。执行阶段该读的文件还得读——这是有意的，不然 agent 就是在盲改。
 
 ## 左侧栏面板
 
