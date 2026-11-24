@@ -13,7 +13,7 @@ A dsh bundle that hands a repo context pack to an external planning model and tu
 dsh plugin add https://github.com/xiaosejun/dsh-golden-partner
 
 # 或装预构建的 tarball（免构建）
-dsh plugin add https://github.com/xiaosejun/dsh-golden-partner/releases/download/v0.1.1/dsh-golden-partner-0.1.1.tgz
+dsh plugin add https://github.com/xiaosejun/dsh-golden-partner/releases/download/v0.1.2/dsh-golden-partner-0.1.2.tgz
 
 # npm 包（尚未发布，发布后可用）
 dsh plugin add dsh-golden-partner
