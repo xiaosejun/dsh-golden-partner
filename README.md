@@ -53,7 +53,7 @@ dsh plugin add dsh-golden-partner
 ## 卸载
 
 ```sh
-dsh plugin --profile web remove dsh-golden-partner
+dsh plugin remove dsh-golden-partner
 ```
 
 或让 agent 执行 `plugin_manager({ action: "remove_bundle", target: "dsh-golden-partner" })`。
