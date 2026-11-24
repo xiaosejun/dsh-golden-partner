@@ -8,7 +8,7 @@ window.__ModuleLoader__.load({
     const PANEL_ID = 'golden-partner'
 
     const zh = {
-      'panel.label': '黄金搭档',
+      'panel.label': 'deepseek黄金搭档',
       title: 'deepseek黄金搭档',
       subtitle:
         '在免费网页版里把逻辑聊清楚，回到本机由 Agent 动手 —— 省的是讨论的 token，不是执行的质量。',
@@ -36,7 +36,7 @@ window.__ModuleLoader__.load({
     }
 
     const en = {
-      'panel.label': 'Golden Partner',
+      'panel.label': 'DeepSeek Golden Partner',
       title: 'deepseek golden partner',
       subtitle:
         'Talk the logic through in the free web chat, then let the agent do the work here — you save discussion tokens, not execution quality.',
