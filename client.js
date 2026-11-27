@@ -98,9 +98,9 @@ window.__ModuleLoader__.load({
       const body = text.trim()
       if (body === '') return PROMPT_RUN
       return (
-        '按下面这份执行简报干活：\n\n' +
+        '先用 plan_intake 把下面这份执行简报落成 plans/ 下的计划文件（短名自动取），落盘后只回一句文件路径；然后再按那份计划干活：\n\n' +
         body +
-        '\n\n先复述你要遵守的 3~5 条约束，确认没有歧义后开始执行；缺的信息一次问清。'
+        '\n\n复述你要遵守的 3~5 条约束，确认没有歧义再开始执行；缺的信息一次问清。'
       )
     }
 

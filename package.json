@@ -1,6 +1,6 @@
 {
   "name": "dsh-golden-partner",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "type": "module",
   "description": "Hands a repo context pack to an external planning model, then brings the brief back as a plan file. Long text stays on disk; the conversation only carries paths and counts.",
   "license": "MIT",
